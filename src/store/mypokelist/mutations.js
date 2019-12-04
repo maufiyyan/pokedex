@@ -18,6 +18,9 @@ export function releaseMyPokemon (state,payload) {
 	if(state.pokemonList[index].my_pokemon.length == 0){
 		state.pokemonList.splice(index,1);
 	}
+	if(state.pokemonList.length == 0){
+		state.pokemonList = null;
+	}
 	LocalStorage.set('pokemonList',JSON.stringify(state.pokemonList))
 }
 export function updateMyPokemon (state,payload) {

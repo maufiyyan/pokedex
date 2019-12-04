@@ -2,7 +2,7 @@
   <q-page id="list_page">
   	<div class="list-pokemon-box">
 		  <div class="row">
-        <template v-for="p in pokeList">
+        <template v-for="p in pokeList" v-if="pokeList != null">
   			  <div 
     				class="col-xs-6 col-sm-3 pokeList relative-position q-pb-lg"
     				:key="p.id+'-'+d.nickname" 
@@ -15,6 +15,11 @@
                 <q-btn class="bg-primary text-white col-12" flat label="Release" @click="release(p.id,d.id)"/>
               </div>
   		    </div>
+        </template>
+        <template v-else>
+          <div class="col-12 absolute-center">
+            You dont have a pokemon, please catch a pokemon
+          </div>
         </template>
 	    </div>
   	</div>
