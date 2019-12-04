@@ -102,7 +102,7 @@ export default {
 		Dialog.create({
 			dark: true,
 			title: 'Success You Got a Pokemon',
-			message: 'Give a nickname',
+			message: 'Give it a nickname',
 			prompt: {
 				model: '',
 				type: 'text' // optional

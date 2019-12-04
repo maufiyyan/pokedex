@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.aefeec03ddf506cace6343e55aac499b.js"
+  "precache-manifest.66c7b27390659605aa5222479835bab5.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "poke_deck"});

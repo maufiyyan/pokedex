@@ -1,7 +1,14 @@
-import {LocalStorage} from 'quasar'
+import {LocalStorage,Dialog} from 'quasar'
 export function setMyPokemon (state,payload) {
 	LocalStorage.set('pokemonList',JSON.stringify(payload))
 	state.pokemonList = payload;
+	Dialog.create({
+		dark: true,
+		title: 'Success',
+		message: 'You Success catch a pokemon',
+		ok:true,
+		persistent: true
+	})
 }
 export function releaseMyPokemon (state,payload) {
 	let index = state.pokemonList.findIndex(x => x.id === payload.id);
@@ -38,5 +45,11 @@ export function updateMyPokemon (state,payload) {
 		})
 		LocalStorage.set('pokemonList',JSON.stringify(state.pokemonList))
 	}
-	console.log(state.pokemonList);
+	Dialog.create({
+		dark: true,
+		title: 'Success',
+		message: 'You success catch a pokemon',
+		ok:true,
+		persistent: true
+	})
 }
