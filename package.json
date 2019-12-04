@@ -10,7 +10,7 @@
   "scripts": {
     "build": "quasar build",
     "start": "node server.js",
-    "heroku-postbuild": "yarn && yarn build"
+    "heroku-postbuild": "npm && npm build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
