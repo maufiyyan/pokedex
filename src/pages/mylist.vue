@@ -2,7 +2,12 @@
   <q-page id="list_page">
   	<div class="list-pokemon-box">
 		  <div class="row">
-        <template v-for="p in pokeList" v-if="pokeList != null">
+        <template v-if="pokeList == null || pokeList == 'null'">
+          <div class="col-6 absolute-center text-center">
+            You dont have a pokemon, please catch a pokemon
+          </div>
+        </template>
+        <template v-for="p in pokeList" v-else>
   			  <div 
     				class="col-xs-6 col-sm-3 pokeList relative-position q-pb-lg"
     				:key="p.id+'-'+d.nickname" 
@@ -16,11 +21,7 @@
               </div>
   		    </div>
         </template>
-        <template v-else>
-          <div class="col-12 absolute-center">
-            You dont have a pokemon, please catch a pokemon
-          </div>
-        </template>
+        
 	    </div>
   	</div>
   </q-page>
