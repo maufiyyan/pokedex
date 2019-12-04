@@ -82,8 +82,12 @@ export default {
 	  	})
   	},
   	owning(id){
-  		let obj = this.pokeList.find(x => x.id === parseInt(id));
-  		return obj == undefined ? 0 : obj.owned;
+  		if(this.pokeList == null){
+  			return 0;
+  		}else{
+	  		let obj = this.pokeList.find(x => x.id === parseInt(id));
+	  		return obj == undefined ? 0 : obj.owned;
+  		}
   	},
   	isElementInViewport (el) {
 		var rect = el.getBoundingClientRect();
